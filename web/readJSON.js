@@ -91,10 +91,35 @@ function fetchDataAndUpdate() {
 // Initial fetch and update
 fetchDataAndUpdate();
 
-// Set interval to fetch and update data every 5 seconds (for example)
-setInterval(fetchDataAndUpdate, 5000); // Adjust interval as needed
+// Continuously run getData function and update progress bar every 3 seconds
+setInterval(() => {
+  getData((updatedValue) => {
+    // Update progress bar with the latest value
+    updateProgressBar(updatedValue);
+  });
+}, 3000); // Interval in milliseconds (3 seconds)
 
-// Add event listener to the button
+// Function to read the contents of the progress.txt file
+function getData(callback) {
+  const xhr = new XMLHttpRequest();
+  xhr.open("GET", "progress.txt");
+  xhr.onload = () => {
+    const progressValue = parseInt(xhr.response);
+    if (typeof callback === "function") {
+      callback(progressValue);
+    }
+  };
+  xhr.send();
+}
+
+// Function to update the progress bar based on the value of the variable
+function updateProgressBar(value) {
+  const progressBar = document.getElementById("my-progress-bar");
+  progressBar.style.width = value + "%";
+  progressBar.textContent = value + "%";
+}
+
+// Add event listener to the button (optional)
 document.getElementById("run-script-btn").addEventListener("click", () => {
   // Make a GET request to localhost:3001 when the button is clicked
   fetch("http://localhost:3001/run-script", {
@@ -114,46 +139,3 @@ document.getElementById("run-script-btn").addEventListener("click", () => {
       console.error("Error:", error);
     });
 });
-
-/**
- * this is the function which will get the data from the file present ini the
- * specified URL
- * here URL: data.json
- *
- * you can also specify the url outside the working directory of the javascript
- */
-function getData() {
-  const xhr = new XMLHttpRequest();
-  xhr.open("GET", "data.json");
-  xhr.onload = () => {
-    console.log(xhr.response);
-  };
-  xhr.send();
-  // invoke getData() wherever required
-}
-
-/**
- * Function to update the progress bar based on the value of the variable
- *
- * @param {any} value
- */
-function updateProgressBar(value) {
-  const progressBar = document.getElementById("my-progress-bar");
-  progressBar.style.width = value + "%";
-  progressBar.textContent = value + "%";
-}
-
-// Example variable (replace with your own variable)
-let progressValue = 0;
-
-// Function to simulate changing value of the variable (for demonstration purposes)
-function simulateProgress() {
-  setInterval(() => {
-    progressValue += Math.floor(Math.random() * 10); // Increment progress value
-    if (progressValue > 100) progressValue = 100; // Ensure progress value doesn't exceed 100%
-    updateProgressBar(progressValue);
-  }, 1000); // Change value every second (adjust as needed)
-}
-
-// Call the function to simulate progress
-simulateProgress();
