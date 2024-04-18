@@ -131,3 +131,29 @@ function getData() {
   xhr.send();
   // invoke getData() wherever required
 }
+
+/**
+ * Function to update the progress bar based on the value of the variable
+ *
+ * @param {any} value
+ */
+function updateProgressBar(value) {
+  const progressBar = document.getElementById("my-progress-bar");
+  progressBar.style.width = value + "%";
+  progressBar.textContent = value + "%";
+}
+
+// Example variable (replace with your own variable)
+let progressValue = 0;
+
+// Function to simulate changing value of the variable (for demonstration purposes)
+function simulateProgress() {
+  setInterval(() => {
+    progressValue += Math.floor(Math.random() * 10); // Increment progress value
+    if (progressValue > 100) progressValue = 100; // Ensure progress value doesn't exceed 100%
+    updateProgressBar(progressValue);
+  }, 1000); // Change value every second (adjust as needed)
+}
+
+// Call the function to simulate progress
+simulateProgress();
