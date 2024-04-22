@@ -1,3 +1,4 @@
+import os
 from drive import Robot_controll
 import RPi.GPIO as GPIO
 import time
@@ -18,6 +19,9 @@ class LineFollowingCar:
     def follow_line(self):
         try:
             while True:
+                # Clear the terminal screen
+                os.system('clear')
+
                 # Read line sensor values
                 sensor_values = [GPIO.input(pin) for pin in self.line_sensor_pins]
 
