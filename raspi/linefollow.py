@@ -21,16 +21,23 @@ class LineFollowingCar:
                 # Read line sensor values
                 sensor_values = [GPIO.input(pin) for pin in self.line_sensor_pins]
 
+                # Print sensor values
+                print("Sensor Values:", sensor_values)
+
                 # Example logic: If any sensor detects the line, turn towards that direction
                 if any(sensor_values):
                     if sensor_values[0] == 1:  # Sensor 1 detects the line
+                        print("Turning left")
                         self.car.turn_left()
                     elif sensor_values[4] == 1:  # Sensor 5 detects the line
+                        print("Turning right")
                         self.car.turn_right()
                     else:
+                        print("Moving forward")
                         self.car.move_forward()
                 else:
                     # If no sensor detects the line, stop
+                    print("Stopping")
                     self.car.stop()
 
                 # Adjust the sleep time according to your requirements
