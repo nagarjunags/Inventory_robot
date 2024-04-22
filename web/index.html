@@ -7,11 +7,15 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Theme buttons -->
+    <div class="theme-buttons">
+      <button id="theme-btn">Dark Theme</button>
+    </div>
     <div class="container">
       <h1 class="title">Warehouse Management Dashboard</h1>
       <div class="summary">
         <p id="total-changes">Total Items Added: 0, Total Items Removed: 0</p>
-        <button id="run-script-btn">Run Bash Script</button>
+        <button id="run-script-btn">Start Scanning</button>
       </div>
       <table id="warehouse-table">
         <!-- Table content will be populated dynamically -->
@@ -20,8 +24,16 @@
     <div class="progress-container">
       <div class="progress-bar" id="my-progress-bar"></div>
     </div>
+    <div class="webcam-container">
+      <!-- Replace 'YOUR_MOTION_URL' with the URL of your Motion webcam stream -->
+      <iframe
+        class="webcam-iframe"
+        src="YOUR_MOTION_URL"
+        allowfullscreen
+      ></iframe>
+    </div>
 
     <script src="readJSON.js"></script>
-    <!-- <script src="script.js"></script> -->
+    <script src="script.js"></script>
   </body>
 </html>

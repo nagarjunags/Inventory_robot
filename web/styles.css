@@ -1,26 +1,32 @@
+/* Light theme styles */
 body {
   font-family: Arial, sans-serif;
-  background-color: #cb9393d5;
+  background-color: #f5f5f5; /* Light gray background */
   margin: 0;
   padding: 0;
 }
-AV .container {
+
+.container {
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
-  background-color: hwb(0 39% 51%);
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff; /* White background */
+  border-radius: 10px; /* Slightly rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
 .title {
   text-align: center;
   color: #333;
+  font-size: 24px; /* Larger font size */
+  margin-bottom: 10px; /* Smaller margin */
 }
 
 .summary {
   text-align: center;
   margin-bottom: 20px;
+  font-size: 18px; /* Larger font size */
+  color: #666; /* Darker gray text color */
 }
 
 #total-changes {
@@ -31,38 +37,32 @@ AV .container {
 table {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 20px; /* Add spacing above the table */
 }
 
-table,
 th,
 td {
   border: 1px solid #ddd;
-}
-
-th,
-td {
-  padding: 10px;
+  padding: 12px;
   text-align: left;
 }
 
 .new-row {
-  background-color: #c8e6c9; /* Light green background color for new rows */
+  background-color: #e0f2f1; /* Light turquoise background color */
 }
 
 .modified-row {
-  background-color: #fff59d; /* Light yellow background color for modified rows */
+  background-color: #ffcc80; /* Light orange background color */
 }
 
 .removed-row {
-  background-color: #ffcdd2; /* Light red background color for removed rows */
+  background-color: #ef9a9a; /* Light red background color */
 }
 
-/* 
-*this is for progress bar
-*/
 .progress-container {
   width: 100%;
   background-color: #f3f3f3;
+  margin-top: 20px; /* Add spacing above the progress bar */
 }
 
 .progress-bar {
@@ -72,4 +72,45 @@ td {
   text-align: center;
   line-height: 30px;
   color: white;
+  border-radius: 5px; /* Slightly rounded corners */
+}
+
+button {
+  background-color: #4caf50; /* Green button background */
+  color: white; /* White text color */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.webcam-container {
+  width: 400px; /* Adjust width as needed */
+  height: 300px; /* Adjust height as needed */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.webcam-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Dark theme styles */
+body.dark-theme {
+  background-color: #333; /* Dark background */
+  color: #fff; /* White text color */
+}
+
+.container.dark-theme {
+  background-color: #444 !important; /* Darker container background */
+  color: #f5f5f5; /* Lighter text color */
 }
