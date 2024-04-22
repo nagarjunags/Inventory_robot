@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import os
 #-------------installing the dependencies----------------------------
-os.system("sudo pip3 install RPi.GPIO")
+#os.system("sudo pip3 install RPi.GPIO")
 #---------------------------------------------------------------------
 
 # Set up GPIO pins for left motor
