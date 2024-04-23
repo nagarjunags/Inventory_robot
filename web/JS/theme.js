@@ -3,9 +3,10 @@
 function toggleTheme() {
   const body = document.body;
   const container = document.querySelector(".container"); // Select the .container div
+  const title= document.querySelector(".title");
   body.classList.toggle("dark-theme");
   container.classList.toggle("dark-theme");
-
+  title.classList.toggle("dark-theme");
   // Get the theme button
   const themeButton = document.getElementById("theme-btn");
 

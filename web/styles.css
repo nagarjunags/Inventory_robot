@@ -114,3 +114,7 @@ body.dark-theme {
   background-color: #444 !important; /* Darker container background */
   color: #f5f5f5; /* Lighter text color */
 }
+
+.title.dark-theme{
+    color: #ccc;
+}

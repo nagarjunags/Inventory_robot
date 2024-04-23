@@ -1,0 +1,8 @@
+[
+  { "rackNumber": 1, "itemPresent": true },
+  { "rackNumber": 2, "itemPresent": true },
+  { "rackNumber": 3, "itemPresent": false },
+  { "rackNumber": 4, "itemPresent": true },
+  { "rackNumber": 5, "itemPresent": true },
+  { "rackNumber": 6, "itemPresent": false }
+]

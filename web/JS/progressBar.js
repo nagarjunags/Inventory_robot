@@ -9,7 +9,7 @@ setInterval(() => {
 // Function to read the contents of the progress.txt file
 function getData(callback) {
   const xhr = new XMLHttpRequest();
-  xhr.open("GET", "progress.txt");
+  xhr.open("GET", "data/progress.txt");
   xhr.onload = () => {
     const progressValue = parseInt(xhr.response);
     if (typeof callback === "function") {

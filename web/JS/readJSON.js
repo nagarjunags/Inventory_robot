@@ -74,7 +74,7 @@ let previousData = null;
 
 // Function to fetch new data and update the dashboard
 function fetchDataAndUpdate() {
-  const jsonFilePath = "data.json"; // Replace 'data.json' with the path to your JSON file
+  const jsonFilePath = "data/data.json"; // Replace 'data.json' with the path to your JSON file
   readJSONFile(jsonFilePath, function (data) {
     // Check if there is previous data
     if (previousData !== null) {
