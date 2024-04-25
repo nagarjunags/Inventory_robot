@@ -8,8 +8,11 @@ stream_url = "http://192.168.248.185:8080/"
 
 try:
     # Open a connection to the webcam server
-    stream = requests.get(stream_url, stream=True)
-    stream.raise_for_status()  # Raise an error for non-successful responses
+    response = requests.get(stream_url, stream=True)
+    response.raise_for_status()  # Raise an error for non-successful responses
+    
+    # Read the entire content of the response into memory
+    content = response.content
 except requests.RequestException as e:
     print("Error:", e)
     exit()
@@ -21,7 +24,8 @@ f = open("demofile2.txt", "a")
 window_open = True
 
 while window_open:
-    for chunk in stream.iter_content(chunk_size=1024):
+    # Iterate over the content of the response
+    for chunk in content.iter_chunks(chunk_size=1024):
         # Convert the received chunk to a numpy array
         nparr = np.frombuffer(chunk, dtype=np.uint8)
 
