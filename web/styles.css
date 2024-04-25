@@ -6,6 +6,10 @@ body {
   padding: 0;
 }
 
+tr{
+  border:4px double black; 
+}
+
 .container {
   max-width: 800px;
   margin: 20px auto;
@@ -103,6 +107,7 @@ button:hover {
   height: 100%;
   border: none;
 }
+
 
 /* Dark theme styles */
 body.dark-theme {
