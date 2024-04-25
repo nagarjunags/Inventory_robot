@@ -1,6 +1,0 @@
-upi://pay?pa=8618333210@paytm&pn=G%20S%20Nagarjuna&mc=0000&mode=02&purpose=00&orgid=159761&cust=1065543871
-upi://pay?pa=8618333210@paytm&pn=G%20S%20Nagarjuna&mc=0000&mode=02&purpose=00&orgid=159761&cust=1065543871
-upi://pay?pa=8618333210@paytm&pn=G%20S%20Nagarjuna&mc=0000&mode=02&purpose=00&orgid=159761&cust=1065543871
-upi://pay?pa=8618333210@paytm&pn=G%20S%20Nagarjuna&mc=0000&mode=02&purpose=00&orgid=159761&cust=1065543871
-upi://pay?pa=8618333210@paytm&pn=G%20S%20Nagarjuna&mc=0000&mode=02&purpose=00&orgid=159761&cust=1065543871
-upi://pay?pa=8618333210@paytm&pn=G%20S%20Nagarjuna&mc=0000&mode=02&purpose=00&orgid=159761&cust=1065543871
