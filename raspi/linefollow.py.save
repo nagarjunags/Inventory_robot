@@ -30,21 +30,22 @@ class LineFollowingCar:
 
                 # Example logic: If any sensor detects the line, turn towards that direction
                 if any(sensor_values):
-                    if sensor_values[1] == 0:  # Sensor 1 detects the line
+                    if sensor_values[0] == 1:  # Sensor 1 detects the line
                         print("Turning left")
-                    elif sensor_values[4] == 0:  # Sensor 5 detects the line
+                        self.car.turn_left()
+a                    elif sensor_values[4] == 1:  # Sensor 5 detects the line
                         print("Turning right")
-                        self.car.turn_right()        
+                        self.car.turn_right()
                     else:
                         print("Moving forward")
-                        self.car.move_backward()
+                        self.car.move_forward()
                 else:
                     # If no sensor detects the line, stop
                     print("Stopping")
                     self.car.stop()
 
                 # Adjust the sleep time according to your requirements
-                # time.sleep(0.1)
+                time.sleep(0.1)
 
         except KeyboardInterrupt:
             print("\nExiting program...")
@@ -55,6 +56,3 @@ class LineFollowingCar:
 if __name__ == "__main__":
     line_following_car = LineFollowingCar()
     line_following_car.follow_line()
-
-
-
