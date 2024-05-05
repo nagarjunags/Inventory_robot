@@ -1,4 +1,7 @@
 import RPi.GPIO as GPIO
+import time
+
+GPIO.setwarnings(False)
 
 class Robot_controll:
     def __init__(self):
